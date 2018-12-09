@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {
+      "id": "57819c06-6741-40bd-a719-a00675379335",
+      "agents": {
+        "ownerAgent": "Samantha Fox",
+        "delegatedAgent": "Max Mustermann"
+      }
+    }
+  ]
+}

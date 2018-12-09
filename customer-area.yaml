@@ -1,40 +1,67 @@
 openapi: 3.0.1
 info:
+  x-api-id: cb699e5c-f51f-4efb-8c8c-b8f6b48e115d
   title: Customer area API
   description: API for customer area
   version: 1.1.2
   contact:
     name: Lampros Papadimitriou
     email: lampros.papadimitriou@check24.de
-  x-api-id: cb699e5c-f51f-4efb-8c8c-b8f6b48e115d
+  x-audience: component-internal
   license:
     name: MIT
 servers:
   - url: https://demo.check24.de/api/v1/customer-area
 paths:
-  /cases:
+  /customer-cases:
     get:
       summary: get all customer cases
+      security:
+        - oauth2
+          - customer-cases.read
       responses:
         200:
           description: A paged array of customer cases
         content:
           application/json:
             schema:
-               $ref: "#/components/schemas/Cases"
+               $ref: "#/components/schemas/CustomerCases"
 components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://identity.check24.de/oauth2/token
+          scopes:
+            customer-case-service.read: Access right needed to read from the customer case service.
   schemas:
-    Case:
+    CustomerCase:
+      description:
+        Customer case including offers and agents assignments
       required:
         - id
         - name
       properties:
         id:
-          type: integer
-          format: int64
+          type: string
         name:
           type: string
-    Cases:
-      type: array
-      items:
-        $ref: "#/components/schemas/Case"
+        agents:
+          description:
+            Agents worked on the customer case
+          type: object
+          additionalProperties:
+            type: string
+            description:
+              the full name of the agent identified by the role
+    CustomerCases:
+      description:
+        Customer cases related with the logged in user
+      required:
+        - cases
+      properties:
+        cases:
+          type: array
+          items:
+            $ref: "#/components/schemas/CustomerCase"

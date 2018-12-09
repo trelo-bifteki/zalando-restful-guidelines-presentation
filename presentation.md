@@ -21,17 +21,36 @@
 
 - Using terms: "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL"
 
-# OpenAPI 
+# OpenAPI
 
 - MUST provide API specification in YAML
 - SHOULD provide API user manual online
 - MUST provide metainformation (title, description, team, audience)
 - MUST use semantic version
 
+# Security
+
+- MUST secure endpoints with OAuth 2.0
+- MUST design and assign permissions
+
+# Versioning
+
+- MUST never break backwards compatibility
+- SHOULD avoid versioning (MUST avoid URL versioning)
+- SHOULD prefer compatible extensions
+- Clients SHOULD not crash on compatible API extensions
+- MUST use media type versioning
+- MUST obtain approval of clients (e.g. deprecation)
+
+# API design
+
+- MUST always return JSON objects as top-level
+- MUST property names  be ASCII snake_case (and never camelCase)
+- SHOULD use additionalProperties
 
 # Notes
 
 ## Principle
 
-- Actively improve and maintain API consistency over long term 
+- Actively improve and maintain API consistency over long term
 - Simple, comprehensive and usable API
