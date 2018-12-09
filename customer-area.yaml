@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: Customer area API
+  description: API for customer area
+  version: 1.1.2
+  contact:
+    name: Lampros Papadimitriou
+    email: lampros.papadimitriou@check24.de
+  x-api-id: cb699e5c-f51f-4efb-8c8c-b8f6b48e115d
+  license:
+    name: MIT
+servers:
+  - url: https://demo.check24.de/api/v1/customer-area
+paths:
+  /cases:
+    get:
+      summary: get all customer cases
+      responses:
+        200:
+          description: A paged array of customer cases
+        content:
+          application/json:
+            schema:
+               $ref: "#/components/schemas/Cases"
+components:
+  schemas:
+    Case:
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    Cases:
+      type: array
+      items:
+        $ref: "#/components/schemas/Case"
