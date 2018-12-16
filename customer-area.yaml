@@ -16,16 +16,16 @@ paths:
   /customer-cases:
     get:
       summary: get all customer cases
-      security:
-        - oauth2
-          - customer-cases.read
       responses:
-        200:
+        '200':
           description: A paged array of customer cases
-        content:
-          application/json:
-            schema:
-               $ref: "#/components/schemas/CustomerCases"
+          content:
+            application/json:
+              schema:
+                 $ref: "#/components/schemas/CustomerCases"
+      security:
+        - oauth2:
+          - customer-cases.read
 components:
   securitySchemes:
     oauth2:
