@@ -47,6 +47,8 @@
 - MUST always return JSON objects as top-level
 - MUST property names  be ASCII snake_case (and never camelCase)
 - SHOULD use additionalProperties
+- SHOULD enumeration values as String
+- SHOULD/MAY standards for Date, duration, currency, country, language
 
 # Notes
 
