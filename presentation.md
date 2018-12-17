@@ -55,8 +55,43 @@
 - swagger online editor
 - connexion
 - problem / problem-spring-web
-- 
+- jackson-datatype-money
+- intellij-swagger
 
+# Observations about Zalando
+
+- Teams serving other teams
+- Agile project structures
+- Strong appearance in Github
+- Techblogs
+
+# API naming
+
+- Must Use lowercase separate words with hyphens for Path Segments
+- Must Use snake_case for query parameters
+- Must Pluralize resource names
+- Must avoid trailing slashes
+- Must stick to conventional query params
+- Must avoid actions - think about resources
+- Must keep URLs verb-free
+- Must identify resources and sub via path
+- May consider not nested URLs
+
+# HTTP requests
+
+- GET for read
+- PUT to update entire resources (replace)
+- POST to create single resources
+- PATCH update parts of single resources
+- DELETE to delete resources
+- HEAD to retrieve header infomation (Etag?)
+- Prefer POST over PUT
+- Use ETag & If-(None)-Match
+
+# Internal processes
+
+- Use functional naming schema
+- internal registry for components
 
 # Notes
 
