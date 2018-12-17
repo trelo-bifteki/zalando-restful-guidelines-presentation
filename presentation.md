@@ -50,6 +50,14 @@
 - SHOULD enumeration values as String
 - SHOULD/MAY standards for Date, duration, currency, country, language
 
+# Useful tools
+
+- swagger online editor
+- connexion
+- problem / problem-spring-web
+- 
+
+
 # Notes
 
 ## Principle
