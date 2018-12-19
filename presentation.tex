@@ -1,5 +1,4 @@
 \begin{frame}{Principles}
-\protect\hypertarget{principles}{}
 
 \begin{itemize}
 \tightlist
@@ -18,7 +17,6 @@
 \end{frame}
 
 \begin{frame}{API first}
-\protect\hypertarget{api-first}{}
 
 \begin{itemize}
 \tightlist
@@ -35,7 +33,6 @@
 \end{frame}
 
 \begin{frame}{Specifications}
-\protect\hypertarget{specifications}{}
 
 \begin{itemize}
 \tightlist
@@ -48,7 +45,6 @@
 \end{frame}
 
 \begin{frame}{OpenAPI}
-\protect\hypertarget{openapi}{}
 
 \begin{itemize}
 \tightlist
@@ -65,7 +61,6 @@
 \end{frame}
 
 \begin{frame}{Security}
-\protect\hypertarget{security}{}
 
 \begin{itemize}
 \tightlist
@@ -78,7 +73,6 @@
 \end{frame}
 
 \begin{frame}{Versioning}
-\protect\hypertarget{versioning}{}
 
 \begin{itemize}
 \tightlist
@@ -99,7 +93,6 @@
 \end{frame}
 
 \begin{frame}{API design}
-\protect\hypertarget{api-design}{}
 
 \begin{itemize}
 \tightlist
@@ -118,7 +111,6 @@
 \end{frame}
 
 \begin{frame}{Useful tools}
-\protect\hypertarget{useful-tools}{}
 
 \begin{itemize}
 \tightlist
@@ -137,7 +129,6 @@
 \end{frame}
 
 \begin{frame}{Observations about Zalando}
-\protect\hypertarget{observations-about-zalando}{}
 
 \begin{itemize}
 \tightlist
@@ -154,7 +145,6 @@
 \end{frame}
 
 \begin{frame}{API naming}
-\protect\hypertarget{api-naming}{}
 
 \begin{itemize}
 \tightlist
@@ -169,7 +159,7 @@
 \item
   Must stick to conventional query params
 \item
-  Must avoid actions - think about resources
+  Must avoid actions - think about resources (lvl 2)
 \item
   Must keep URLs verb-free
 \item
@@ -181,7 +171,6 @@
 \end{frame}
 
 \begin{frame}{HTTP requests}
-\protect\hypertarget{http-requests}{}
 
 \begin{itemize}
 \tightlist
@@ -205,8 +194,95 @@
 
 \end{frame}
 
+\begin{frame}{Http status codes and errors}
+
+\begin{itemize}
+\tightlist
+\item
+  Use standard HTTP codes
+\item
+  201 CREATED (sync) vs 202 ACCEPTED (async)
+\item
+  207 (multi-status)
+\item
+  409 CONFLICT (concurrency problem)
+\item
+  412 PRECONDITION FAILED (If-Match mismatch)
+\item
+  423 Pessimistic locking
+\item
+  429 Too many requests
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Performance tips}
+
+\begin{itemize}
+\tightlist
+\item
+  SHOULD Use gzip compression
+\item
+  SHOULD reduce bandwidth needs and improve responsiveness
+\item
+  SHOULD support filtering fields
+\item
+  SHOULD support pagination
+\item
+  SHOULD allow optional embedding
+\item
+  MUST Document caching, if supported (default: Cache-Control: no-cache)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Common field names}
+
+\begin{itemize}
+\tightlist
+\item
+  id
+\item
+  xyz\_id
+\item
+  created
+\item
+  modified
+\item
+  type
+\item
+  etag
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Proprietary Headers}
+
+\begin{itemize}
+\tightlist
+\item
+  X-Flow-ID (troubleshooting)
+\item
+  X-Frontend-Type (mobile-app / browser)
+\item
+  X-Device-Type (tablet, desktop)
+\item
+  X-Device-OS (IOS, Android)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{API operations}
+
+\begin{itemize}
+\tightlist
+\item
+  MUST Publish API Specifications (zalando-apis directory)
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}{Internal processes}
-\protect\hypertarget{internal-processes}{}
 
 \begin{itemize}
 \tightlist
@@ -219,7 +295,6 @@
 \end{frame}
 
 \begin{frame}{Notes}
-\protect\hypertarget{notes}{}
 
 \begin{block}{Principle}
 
