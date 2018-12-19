@@ -72,7 +72,7 @@
 - Must Pluralize resource names
 - Must avoid trailing slashes
 - Must stick to conventional query params
-- Must avoid actions - think about resources
+- Must avoid actions - think about resources (lvl 2)
 - Must keep URLs verb-free
 - Must identify resources and sub via path
 - May consider not nested URLs
@@ -87,6 +87,44 @@
 - HEAD to retrieve header infomation (Etag?)
 - Prefer POST over PUT
 - Use ETag & If-(None)-Match
+
+# Http status codes and errors
+
+- Use standard HTTP codes
+- 201 CREATED (sync) vs 202 ACCEPTED (async)
+- 207 (multi-status)
+- 409 CONFLICT (concurrency problem)
+- 412 PRECONDITION FAILED (If-Match mismatch)
+- 423 Pessimistic locking
+- 429 Too many requests
+
+# Performance tips
+
+- SHOULD Use gzip compression
+- SHOULD reduce bandwidth needs and improve responsiveness
+- SHOULD support filtering fields
+- SHOULD support pagination
+- SHOULD allow optional embedding
+- MUST Document caching, if supported (default: Cache-Control: no-cache)
+
+# Common field names
+- id
+- xyz_id
+- created
+- modified
+- type
+- etag
+
+# Proprietary Headers
+
+- X-Flow-ID (troubleshooting)
+- X-Frontend-Type (mobile-app / browser)
+- X-Device-Type (tablet, desktop)
+- X-Device-OS (IOS, Android)
+
+# API operations
+
+- MUST Publish API Specifications (zalando-apis directory)
 
 # Internal processes
 
