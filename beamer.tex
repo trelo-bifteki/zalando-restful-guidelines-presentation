@@ -1,0 +1,236 @@
+\begin{frame}{Principles}
+\protect\hypertarget{principles}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Be liberal in what you accept
+\item
+  Be conservative in what you send
+\item
+  Treat you API as a product
+\item
+  Be customer-oriented
+\item
+  Act as a product owner
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{API first}
+\protect\hypertarget{api-first}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Define API first!
+\item
+  Follow standards
+\item
+  Early review and feedback
+\item
+  Free yourself from \emph{HOW} concerns
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Specifications}
+\protect\hypertarget{specifications}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Using terms: ``MUST'', ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL
+  NOT'', ``SHOULD'', ``SHOULD NOT'', ``RECOMMENDED'', ``MAY'', and
+  ``OPTIONAL''
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{OpenAPI}
+\protect\hypertarget{openapi}{}
+
+\begin{itemize}
+\tightlist
+\item
+  MUST provide API specification in YAML
+\item
+  SHOULD provide API user manual online
+\item
+  MUST provide metainformation (title, description, team, audience)
+\item
+  MUST use semantic version
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Security}
+\protect\hypertarget{security}{}
+
+\begin{itemize}
+\tightlist
+\item
+  MUST secure endpoints with OAuth 2.0
+\item
+  MUST design and assign permissions
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Versioning}
+\protect\hypertarget{versioning}{}
+
+\begin{itemize}
+\tightlist
+\item
+  MUST never break backwards compatibility
+\item
+  SHOULD avoid versioning (MUST avoid URL versioning)
+\item
+  SHOULD prefer compatible extensions
+\item
+  Clients SHOULD not crash on compatible API extensions
+\item
+  MUST use media type versioning
+\item
+  MUST obtain approval of clients (e.g.~deprecation)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{API design}
+\protect\hypertarget{api-design}{}
+
+\begin{itemize}
+\tightlist
+\item
+  MUST always return JSON objects as top-level
+\item
+  MUST property names be ASCII snake\_case (and never camelCase)
+\item
+  SHOULD use additionalProperties
+\item
+  SHOULD enumeration values as String
+\item
+  SHOULD/MAY standards for Date, duration, currency, country, language
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Useful tools}
+\protect\hypertarget{useful-tools}{}
+
+\begin{itemize}
+\tightlist
+\item
+  swagger online editor
+\item
+  connexion
+\item
+  problem / problem-spring-web
+\item
+  jackson-datatype-money
+\item
+  intellij-swagger
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Observations about Zalando}
+\protect\hypertarget{observations-about-zalando}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Teams serving other teams
+\item
+  Agile project structures
+\item
+  Strong appearance in Github
+\item
+  Techblogs
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{API naming}
+\protect\hypertarget{api-naming}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Must Use lowercase separate words with hyphens for Path Segments
+\item
+  Must Use snake\_case for query parameters
+\item
+  Must Pluralize resource names
+\item
+  Must avoid trailing slashes
+\item
+  Must stick to conventional query params
+\item
+  Must avoid actions - think about resources
+\item
+  Must keep URLs verb-free
+\item
+  Must identify resources and sub via path
+\item
+  May consider not nested URLs
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{HTTP requests}
+\protect\hypertarget{http-requests}{}
+
+\begin{itemize}
+\tightlist
+\item
+  GET for read
+\item
+  PUT to update entire resources (replace)
+\item
+  POST to create single resources
+\item
+  PATCH update parts of single resources
+\item
+  DELETE to delete resources
+\item
+  HEAD to retrieve header infomation (Etag?)
+\item
+  Prefer POST over PUT
+\item
+  Use ETag \& If-(None)-Match
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Internal processes}
+\protect\hypertarget{internal-processes}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Use functional naming schema
+\item
+  internal registry for components
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Notes}
+\protect\hypertarget{notes}{}
+
+\begin{block}{Principle}
+
+\begin{itemize}
+\tightlist
+\item
+  Actively improve and maintain API consistency over long term
+\item
+  Simple, comprehensive and usable API
+\end{itemize}
+
+\end{block}
+
+\end{frame}
