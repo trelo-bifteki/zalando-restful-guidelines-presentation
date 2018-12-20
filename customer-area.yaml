@@ -69,14 +69,21 @@ components:
       required:
         - id
         - name
+        - loanAmount
+        - phase
       properties:
         id:
           type: string
           format: uuid
         name:
           type: string
-        loanAmount:
+        loan_amount:
           $ref: "#/components/schemas/Money"
+        phase:
+          $ref: "#/components/schemas/PhaseEnum"
+        created_on:
+          type: string
+          format: date-time
         metadata:
           description:
             Further metadata regarding customer case
@@ -150,4 +157,17 @@ components:
           format: uri
           description: |
             An absolute URI that identifies the specific occurrence of the problem.
-            It may or may not yield further information if dereferenced.
+            It may or may not yield further information if dereferenced
+    PhaseEnum:
+      type: string
+      x-extensible-enum:
+        - in-application
+        - offer-created
+        - document-arrival
+        - accepted
+        - rejected
+      description: |
+        Intended target audience of the API. Relevant for standards around
+        quality of design and documentation, reviews, discoverability,
+        changeability, and permission granting
+      example: in-application
