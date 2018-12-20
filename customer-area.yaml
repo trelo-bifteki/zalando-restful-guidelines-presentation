@@ -50,6 +50,9 @@ paths:
             application/problem+json:
               schema:
                 $ref: "#/components/schemas/Problem"
+      security:
+        - oauth2:
+          - customer-cases.read
 components:
   securitySchemes:
     oauth2:
