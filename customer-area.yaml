@@ -68,20 +68,23 @@ components:
         Customer case including offers and agents assignments
       required:
         - id
-        - name
-        - loanAmount
+        - applicant
+        - loan_amount
         - phase
       properties:
         id:
           type: string
           format: uuid
-        name:
-          type: string
+        applicant:
+          $ref: "#/components/schemas/Applicant"
         loan_amount:
           $ref: "#/components/schemas/Money"
         phase:
           $ref: "#/components/schemas/PhaseEnum"
-        created_on:
+        created:
+          type: string
+          format: date-time
+        modified:
           type: string
           format: date-time
         metadata:
@@ -102,6 +105,27 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/CustomerCase"
+    Applicant:
+      description:
+        Applicant person
+      required:
+        - first_name
+        - last_name
+        - date_of_birth
+      properties:
+        first_name:
+          type: string
+          example: Max
+        last_name:
+          type: string
+          example: Mustermann
+        date_of_birth:
+          type: string
+          format: date
+        nationality:
+          type: string
+          description: 2 letter nationality as defined in ISO-3166-1
+          format: iso-3166-1
     Money:
       type: object
       properties:

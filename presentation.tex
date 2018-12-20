@@ -14,9 +14,21 @@
 
 \maketitle
 
-\begin{frame}{Principles}
+\section{The soft part}
 
+\begin{frame}{About Zalando}
+\begin{itemize}
+	\item Split in verticals
+	\item Teams serving other teams
+	\item Agile project structures
+	\item Strong appearance in Github
+	\item Techblogs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Principles}
   \metroset{block=fill}
+
   \begin{alertblock}{The Robustness Principle}
     Be liberal in what you accept, be conservative in what you send
   \end{alertblock}
@@ -41,165 +53,92 @@
 		\item Free yourself from \emph{HOW} concerns
 	  \end{itemize}
    	\end{column}
+
     \begin{column}{0.6\textwidth}
-    Example
-    \begin{itemize}
-      \item PO receives requirement
-      \item Team designs API draft
-      \item Lint it (internal tool)
-      \item OP communicates draft with client(s)
-      \item Review (internal tool), repeat
-      \item Teams proceed with implementation
-      \item Publish in API Portal (internal)
-   	\end{itemize}
+      Example
+      \begin{itemize}
+        \item PO receives requirement
+        \item Team designs API draft
+        \item Lint it (internal tool)
+        \item OP communicates draft with client(s)
+        \item Review (internal tool), repeat
+        \item Teams proceed with implementation
+        \item Publish in API Portal (internal)
+     	\end{itemize}
    \end{column}
   \end{columns}
 
 \end{frame}
 
 \begin{frame}{OpenAPI}
-
   \begin{itemize}
     \item \emph{MUST} provide API specification in YAML
     \item \emph{SHOULD} provide API user manual online
     \item \emph{MUST} provide metainformation (title, description, team, audience)
     \item \emph{MUST} use semantic version
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Security}
-
   \begin{itemize}
-
-    \item
-          \emph{MUST} secure endpoints with OAuth 2.0
-    \item
-          \emph{MUST} design and assign permissions
+    \item \emph{MUST} secure endpoints with OAuth 2.0
+    \item \emph{MUST} design and assign permissions
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Versioning}
-
   \begin{itemize}
-
-    \item
-          \emph{MUST} never break backwards compatibility
-    \item
-          \emph{SHOULD} avoid versioning (MUST avoid URL versioning)
-    \item
-          \emph{SHOULD} prefer compatible extensions
-    \item
-          Clients SHOULD not crash on compatible API extensions
-    \item
-          MUST use media type versioning
-    \item
-          MUST obtain approval of clients (e.g.~deprecation)
+    \item \emph{MUST} never break backwards compatibility
+    \item \emph{SHOULD} avoid versioning (MUST avoid URL versioning)
+    \item \emph{SHOULD} prefer compatible extensions
+    \item Clients SHOULD not crash on compatible API extensions
+    \item \emph{MUST} use media type versioning
+    \item \emph{MUST} obtain approval of clients (e.g.~deprecation)
   \end{itemize}
 
+  \begin{block}{Example}
+    Accept: application/x.zalando.cart+json;version=2
+  \end{block}
 \end{frame}
+
+\section{The hard part}
 
 \begin{frame}{API design}
-
   \begin{itemize}
-
-    \item
-          MUST always return JSON objects as top-level
-    \item
-          MUST property names be ASCII snake\_case (and never camelCase)
-    \item
-          SHOULD use additionalProperties
-    \item
-          SHOULD enumeration values as String
-    \item
-          SHOULD/MAY standards for Date, duration, currency, country, language
+    \item \emph{MUST} always return JSON objects as top-level
+    \item \emph{MUST} property names be ASCII \emph{snake\_case} (and never \empty{camelCase})
+    \item \emph{SHOULD} use additionalProperties
+    \item \emph{SHOULD} use enumeration values as String
+    \item \emph{SHOULD} use standards for Date, duration, currency, country, language
   \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Useful tools}
-
-  \begin{itemize}
-
-    \item
-          swagger online editor
-    \item
-          connexion
-    \item
-          problem / problem-spring-web
-    \item
-          jackson-datatype-money
-    \item
-          intellij-swagger
-  \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Observations about Zalando}
-
-  \begin{itemize}
-
-    \item
-          Teams serving other teams
-    \item
-          Agile project structures
-    \item
-          Strong appearance in Github
-    \item
-          Techblogs
-  \end{itemize}
-
 \end{frame}
 
 \begin{frame}{API naming}
-
   \begin{itemize}
-
-    \item
-          Must Use lowercase separate words with hyphens for Path Segments
-    \item
-          Must Use snake\_case for query parameters
-    \item
-          Must Pluralize resource names
-    \item
-          Must avoid trailing slashes
-    \item
-          Must stick to conventional query params
-    \item
-          Must avoid actions - think about resources (lvl 2)
-    \item
-          Must keep URLs verb-free
-    \item
-          Must identify resources and sub via path
-    \item
-          May consider not nested URLs
+    \item \emph{Must} Use lowercase separate words with hyphens for Path Segments
+    \item \emph{Must} Use snake\_case for query parameters
+    \item \emph{Must} Pluralize resource names
+    \item \emph{Must} avoid trailing slashes
+    \item \emph{Must} stick to conventional query params
+    \item \emph{Must} avoid actions - think about resources (lvl 2)
+    \item \emph{Must} keep URLs verb-free
+    \item \emph{Must} identify resources and sub via path
+    \item \emph{Must} booleans not be null
+    \item \emph{May} consider not nested URLs
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{HTTP requests}
-
   \begin{itemize}
-
-    \item
-          GET for read
-    \item
-          PUT to update entire resources (replace)
-    \item
-          POST to create single resources
-    \item
-          PATCH update parts of single resources
-    \item
-          DELETE to delete resources
-    \item
-          HEAD to retrieve header infomation (Etag?)
-    \item
-          Prefer POST over PUT
-    \item
-          Use ETag \& If-(None)-Match
+    \item GET for read
+    \item PUT to update entire resources (replace)
+    \item POST to create single resources
+    \item PATCH update parts of single resources
+    \item DELETE to delete resources
+    \item HEAD to retrieve header infomation (Etag?)
+    \item Prefer POST over PUT
+    \item Use ETag \& If-(None)-Match
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Http status codes and errors}
@@ -315,7 +254,17 @@
     \end{itemize}
 
   \end{block}
-
 \end{frame}
+
+\begin{frame}{Useful tools}
+  \begin{itemize}
+    \item swagger online editor
+    \item connexion
+    \item problem / problem-spring-web
+    \item jackson-datatype-money
+    \item intellij-swagger
+  \end{itemize}
+\end{frame}
+
 
 \end{document}
