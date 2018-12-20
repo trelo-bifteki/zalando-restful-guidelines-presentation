@@ -142,63 +142,36 @@
 \end{frame}
 
 \begin{frame}{Http status codes and errors}
-
   \begin{itemize}
-
-    \item
-          Use standard HTTP codes
-    \item
-          201 CREATED (sync) vs 202 ACCEPTED (async)
-    \item
-          207 (multi-status)
-    \item
-          409 CONFLICT (concurrency problem)
-    \item
-          412 PRECONDITION FAILED (If-Match mismatch)
-    \item
-          423 Pessimistic locking
-    \item
-          429 Too many requests
+    \item Use standard HTTP codes
+    \item 201 CREATED (sync) vs 202 ACCEPTED (async)
+    \item 207 (multi-status)
+    \item 409 CONFLICT (concurrency problem)
+    \item 412 PRECONDITION FAILED (If-Match mismatch)
+    \item 423 LOCKED Pessimistic locking
+    \item 429 Too many requests
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Performance tips}
-
   \begin{itemize}
-
-    \item
-          SHOULD Use gzip compression
-    \item
-          SHOULD reduce bandwidth needs and improve responsiveness
-    \item
-          SHOULD support filtering fields
-    \item
-          SHOULD support pagination
-    \item
-          SHOULD allow optional embedding
-    \item
-          MUST Document caching, if supported (default: Cache-Control: no-cache)
+    \item SHOULD Use gzip compression
+    \item SHOULD reduce bandwidth needs and improve responsiveness
+    \item SHOULD support filtering fields
+    \item SHOULD support pagination
+    \item SHOULD allow optional embedding
+    \item MUST Document caching, if supported (default: Cache-Control: no-cache)
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Common field names}
-
   \begin{itemize}
-
-    \item
-          id
-    \item
-          xyz\_id
-    \item
-          created
-    \item
-          modified
-    \item
-          type
-    \item
-          etag
+    \item id
+    \item xyz\_id
+    \item created
+    \item modified
+    \item type
+    \item etag
   \end{itemize}
 
 \end{frame}
