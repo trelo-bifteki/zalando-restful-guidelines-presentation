@@ -3,12 +3,10 @@
 \usetheme[progressbar=frametitle]{metropolis}
 
 \usepackage{graphicx} % Allows including images
-\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
 \title{RESTful APIs guidelines}
 \subtitle{A Zalando showcase}
 \date{\today}
-\date{}
 \author{Lampros Papadimitriou}
 \institute{Check24 Baufinanzierung GmbH}
 
@@ -18,313 +16,301 @@
 
 \begin{frame}{Principles}
 
-\begin{itemize}
-\tightlist
-\item
-  Be liberal in what you accept
-\item
-  Be conservative in what you send
-\item
-  Treat you API as a product
-\item
-  Be customer-oriented
-\item
-  Act as a product owner
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          Be liberal in what you accept
+    \item
+          Be conservative in what you send
+    \item
+          Treat you API as a product
+    \item
+          Be customer-oriented
+    \item
+          Act as a product owner
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{API first}
 
-\begin{itemize}
-\tightlist
-\item
-  Define API first!
-\item
-  Follow standards
-\item
-  Early review and feedback
-\item
-  Free yourself from \emph{HOW} concerns
-\end{itemize}
+  \begin{itemize}
 
-\end{frame}
-
-\begin{frame}{Specifications}
-
-\begin{itemize}
-\tightlist
-\item
-  Using terms: ``MUST'', ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL
-  NOT'', ``SHOULD'', ``SHOULD NOT'', ``RECOMMENDED'', ``MAY'', and
-  ``OPTIONAL''
-\end{itemize}
+    \item
+          Define API first!
+    \item
+          Follow standards
+    \item
+          Early review and feedback
+    \item
+          Free yourself from \emph{HOW} concerns
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{OpenAPI}
 
-\begin{itemize}
-\tightlist
-\item
-  MUST provide API specification in YAML
-\item
-  SHOULD provide API user manual online
-\item
-  MUST provide metainformation (title, description, team, audience)
-\item
-  MUST use semantic version
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          MUST provide API specification in YAML
+    \item
+          SHOULD provide API user manual online
+    \item
+          MUST provide metainformation (title, description, team, audience)
+    \item
+          MUST use semantic version
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Security}
 
-\begin{itemize}
-\tightlist
-\item
-  MUST secure endpoints with OAuth 2.0
-\item
-  MUST design and assign permissions
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          MUST secure endpoints with OAuth 2.0
+    \item
+          MUST design and assign permissions
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Versioning}
 
-\begin{itemize}
-\tightlist
-\item
-  MUST never break backwards compatibility
-\item
-  SHOULD avoid versioning (MUST avoid URL versioning)
-\item
-  SHOULD prefer compatible extensions
-\item
-  Clients SHOULD not crash on compatible API extensions
-\item
-  MUST use media type versioning
-\item
-  MUST obtain approval of clients (e.g.~deprecation)
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          MUST never break backwards compatibility
+    \item
+          SHOULD avoid versioning (MUST avoid URL versioning)
+    \item
+          SHOULD prefer compatible extensions
+    \item
+          Clients SHOULD not crash on compatible API extensions
+    \item
+          MUST use media type versioning
+    \item
+          MUST obtain approval of clients (e.g.~deprecation)
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{API design}
 
-\begin{itemize}
-\tightlist
-\item
-  MUST always return JSON objects as top-level
-\item
-  MUST property names be ASCII snake\_case (and never camelCase)
-\item
-  SHOULD use additionalProperties
-\item
-  SHOULD enumeration values as String
-\item
-  SHOULD/MAY standards for Date, duration, currency, country, language
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          MUST always return JSON objects as top-level
+    \item
+          MUST property names be ASCII snake\_case (and never camelCase)
+    \item
+          SHOULD use additionalProperties
+    \item
+          SHOULD enumeration values as String
+    \item
+          SHOULD/MAY standards for Date, duration, currency, country, language
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Useful tools}
 
-\begin{itemize}
-\tightlist
-\item
-  swagger online editor
-\item
-  connexion
-\item
-  problem / problem-spring-web
-\item
-  jackson-datatype-money
-\item
-  intellij-swagger
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          swagger online editor
+    \item
+          connexion
+    \item
+          problem / problem-spring-web
+    \item
+          jackson-datatype-money
+    \item
+          intellij-swagger
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Observations about Zalando}
 
-\begin{itemize}
-\tightlist
-\item
-  Teams serving other teams
-\item
-  Agile project structures
-\item
-  Strong appearance in Github
-\item
-  Techblogs
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          Teams serving other teams
+    \item
+          Agile project structures
+    \item
+          Strong appearance in Github
+    \item
+          Techblogs
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{API naming}
 
-\begin{itemize}
-\tightlist
-\item
-  Must Use lowercase separate words with hyphens for Path Segments
-\item
-  Must Use snake\_case for query parameters
-\item
-  Must Pluralize resource names
-\item
-  Must avoid trailing slashes
-\item
-  Must stick to conventional query params
-\item
-  Must avoid actions - think about resources (lvl 2)
-\item
-  Must keep URLs verb-free
-\item
-  Must identify resources and sub via path
-\item
-  May consider not nested URLs
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          Must Use lowercase separate words with hyphens for Path Segments
+    \item
+          Must Use snake\_case for query parameters
+    \item
+          Must Pluralize resource names
+    \item
+          Must avoid trailing slashes
+    \item
+          Must stick to conventional query params
+    \item
+          Must avoid actions - think about resources (lvl 2)
+    \item
+          Must keep URLs verb-free
+    \item
+          Must identify resources and sub via path
+    \item
+          May consider not nested URLs
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{HTTP requests}
 
-\begin{itemize}
-\tightlist
-\item
-  GET for read
-\item
-  PUT to update entire resources (replace)
-\item
-  POST to create single resources
-\item
-  PATCH update parts of single resources
-\item
-  DELETE to delete resources
-\item
-  HEAD to retrieve header infomation (Etag?)
-\item
-  Prefer POST over PUT
-\item
-  Use ETag \& If-(None)-Match
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          GET for read
+    \item
+          PUT to update entire resources (replace)
+    \item
+          POST to create single resources
+    \item
+          PATCH update parts of single resources
+    \item
+          DELETE to delete resources
+    \item
+          HEAD to retrieve header infomation (Etag?)
+    \item
+          Prefer POST over PUT
+    \item
+          Use ETag \& If-(None)-Match
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Http status codes and errors}
 
-\begin{itemize}
-\tightlist
-\item
-  Use standard HTTP codes
-\item
-  201 CREATED (sync) vs 202 ACCEPTED (async)
-\item
-  207 (multi-status)
-\item
-  409 CONFLICT (concurrency problem)
-\item
-  412 PRECONDITION FAILED (If-Match mismatch)
-\item
-  423 Pessimistic locking
-\item
-  429 Too many requests
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          Use standard HTTP codes
+    \item
+          201 CREATED (sync) vs 202 ACCEPTED (async)
+    \item
+          207 (multi-status)
+    \item
+          409 CONFLICT (concurrency problem)
+    \item
+          412 PRECONDITION FAILED (If-Match mismatch)
+    \item
+          423 Pessimistic locking
+    \item
+          429 Too many requests
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Performance tips}
 
-\begin{itemize}
-\tightlist
-\item
-  SHOULD Use gzip compression
-\item
-  SHOULD reduce bandwidth needs and improve responsiveness
-\item
-  SHOULD support filtering fields
-\item
-  SHOULD support pagination
-\item
-  SHOULD allow optional embedding
-\item
-  MUST Document caching, if supported (default: Cache-Control: no-cache)
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          SHOULD Use gzip compression
+    \item
+          SHOULD reduce bandwidth needs and improve responsiveness
+    \item
+          SHOULD support filtering fields
+    \item
+          SHOULD support pagination
+    \item
+          SHOULD allow optional embedding
+    \item
+          MUST Document caching, if supported (default: Cache-Control: no-cache)
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Common field names}
 
-\begin{itemize}
-\tightlist
-\item
-  id
-\item
-  xyz\_id
-\item
-  created
-\item
-  modified
-\item
-  type
-\item
-  etag
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          id
+    \item
+          xyz\_id
+    \item
+          created
+    \item
+          modified
+    \item
+          type
+    \item
+          etag
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Proprietary Headers}
 
-\begin{itemize}
-\tightlist
-\item
-  X-Flow-ID (troubleshooting)
-\item
-  X-Frontend-Type (mobile-app / browser)
-\item
-  X-Device-Type (tablet, desktop)
-\item
-  X-Device-OS (IOS, Android)
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          X-Flow-ID (troubleshooting)
+    \item
+          X-Frontend-Type (mobile-app / browser)
+    \item
+          X-Device-Type (tablet, desktop)
+    \item
+          X-Device-OS (IOS, Android)
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{API operations}
 
-\begin{itemize}
-\tightlist
-\item
-  MUST Publish API Specifications (zalando-apis directory)
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          MUST Publish API Specifications (zalando-apis directory)
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Internal processes}
 
-\begin{itemize}
-\tightlist
-\item
-  Use functional naming schema
-\item
-  internal registry for components
-\end{itemize}
+  \begin{itemize}
+
+    \item
+          Use functional naming schema
+    \item
+          internal registry for components
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Notes}
 
-\begin{block}{Principle}
+  \begin{block}{Principle}
 
-\begin{itemize}
-\tightlist
-\item
-  Actively improve and maintain API consistency over long term
-\item
-  Simple, comprehensive and usable API
-\end{itemize}
+    \begin{itemize}
 
-\end{block}
+      \item
+            Actively improve and maintain API consistency over long term
+      \item
+            Simple, comprehensive and usable API
+    \end{itemize}
+
+  \end{block}
 
 \end{frame}
 
