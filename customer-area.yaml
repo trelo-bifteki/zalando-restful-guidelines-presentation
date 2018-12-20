@@ -11,7 +11,7 @@ info:
   license:
     name: MIT
 servers:
-  - url: https://demo.check24.de/api/v1/customer-area
+  - url: https://api.trelobifteki.com/api/customer-area
 paths:
   /customer-cases:
     get:
@@ -26,13 +26,31 @@ paths:
       security:
         - oauth2:
           - customer-cases.read
+  /customer-cases/{customerCaseId}:
+    get:
+      summary: get customer case by id
+      parameters:
+        - name: customerCaseId
+          in: path
+          required: true
+          description: The id of the customer case to retrieve
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Customer case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomerCases"
 components:
   securitySchemes:
     oauth2:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: https://identity.check24.de/oauth2/token
+          tokenUrl: https://identity.trelobifteki.com/oauth2/token
           scopes:
             customer-case-service.read: Access right needed to read from the customer case service.
   schemas:
@@ -47,14 +65,14 @@ components:
           type: string
         name:
           type: string
-        agents:
+        metadata:
           description:
-            Agents worked on the customer case
+            Further metadata regarding customer case
           type: object
           additionalProperties:
             type: string
             description:
-              the full name of the agent identified by the role
+              further options
     CustomerCases:
       description:
         Customer cases related with the logged in user

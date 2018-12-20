@@ -16,35 +16,43 @@
 
 \begin{frame}{Principles}
 
-  \begin{itemize}
+  \metroset{block=fill}
+  \begin{alertblock}{The Robustness Principle}
+    Be liberal in what you accept, be conservative in what you send
+  \end{alertblock}
 
-    \item
-          Be liberal in what you accept
-    \item
-          Be conservative in what you send
-    \item
-          Treat you API as a product
-    \item
-          Be customer-oriented
-    \item
-          Act as a product owner
+  \begin{itemize}
+    \item Treat you API as a product
+    \item Be customer-oriented
+    \item Act as a product owner
+    \item Actively improve and maintain API consistency over long term
+    \item Simple, comprehensive and usable API
   \end{itemize}
 
 \end{frame}
 
-\begin{frame}{API first}
-
-  \begin{itemize}
-
-    \item
-          Define API first!
-    \item
-          Follow standards
-    \item
-          Early review and feedback
-    \item
-          Free yourself from \emph{HOW} concerns
-  \end{itemize}
+\begin{frame}{API first!}
+  \begin{columns}
+   	\begin{column}{0.4\textwidth}
+	  \begin{itemize}
+	    \item Define API first!
+		\item Follow standards
+		\item Early review and feedback
+		\item Free yourself from \emph{HOW} concerns
+	  \end{itemize}
+   	\end{column}
+    \begin{column}{0.6\textwidth}
+    Example
+   	\begin{itemize}
+   		\item Product owner (PO) receives requirement
+   		\item Team designs API draft
+   		\item OP communicates draft with client(s)
+   		\item Review, redesign, repeat
+   		\item Teams proceed with implementation
+   		\item Publish API, Doc, artifact
+   	\end{itemize}
+   \end{column}
+  \end{columns}
 
 \end{frame}
 
@@ -53,13 +61,13 @@
   \begin{itemize}
 
     \item
-          MUST provide API specification in YAML
+          \emph{MUST} provide API specification in YAML
     \item
-          SHOULD provide API user manual online
+          \emph{SHOULD} provide API user manual online
     \item
-          MUST provide metainformation (title, description, team, audience)
+          \emph{MUST} provide metainformation (title, description, team, audience)
     \item
-          MUST use semantic version
+          \emph{MUST} use semantic version
   \end{itemize}
 
 \end{frame}
@@ -69,9 +77,9 @@
   \begin{itemize}
 
     \item
-          MUST secure endpoints with OAuth 2.0
+          \emph{MUST} secure endpoints with OAuth 2.0
     \item
-          MUST design and assign permissions
+          \emph{MUST} design and assign permissions
   \end{itemize}
 
 \end{frame}
@@ -81,11 +89,11 @@
   \begin{itemize}
 
     \item
-          MUST never break backwards compatibility
+          \emph{MUST} never break backwards compatibility
     \item
-          SHOULD avoid versioning (MUST avoid URL versioning)
+          \emph{SHOULD} avoid versioning (MUST avoid URL versioning)
     \item
-          SHOULD prefer compatible extensions
+          \emph{SHOULD} prefer compatible extensions
     \item
           Clients SHOULD not crash on compatible API extensions
     \item
