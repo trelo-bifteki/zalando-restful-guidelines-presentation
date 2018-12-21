@@ -15,6 +15,7 @@ servers:
 paths:
   /customer-cases:
     get:
+      operationId: app.get_customer_cases
       summary: get all customer cases
       responses:
         '200':
@@ -29,6 +30,7 @@ paths:
   /customer-cases/{customerCaseId}:
     get:
       summary: get customer case by id
+      operationId: app.get_customer_case
       parameters:
         - name: customerCaseId
           in: path
@@ -99,7 +101,7 @@ components:
       description:
         Customer cases related with the logged in user
       required:
-        - cases
+        - items
       properties:
         self:
           type: string
