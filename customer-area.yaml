@@ -11,7 +11,7 @@ info:
   license:
     name: MIT
 servers:
-  - url: https://api.trelobifteki.com/api/customer-area
+  - url: https://customer-area.trelobifteki.com/api/customer-area
 paths:
   /customer-cases:
     get:
@@ -25,7 +25,7 @@ paths:
                  $ref: "#/components/schemas/CustomerCases"
       security:
         - oauth2:
-          - customer-cases.read
+          - customer-area.customer-cases.read
   /customer-cases/{customerCaseId}:
     get:
       summary: get customer case by id
@@ -52,7 +52,7 @@ paths:
                 $ref: "#/components/schemas/Problem"
       security:
         - oauth2:
-          - customer-cases.read
+          - customer-area.customer-cases.read
 components:
   securitySchemes:
     oauth2:
@@ -61,7 +61,7 @@ components:
         clientCredentials:
           tokenUrl: https://identity.trelobifteki.com/oauth2/token
           scopes:
-            customer-case-service.read: Access right needed to read from the customer case service.
+            customer-area.customer-cases.read: Access right needed to read from the customer case service.
   schemas:
     CustomerCase:
       description:
@@ -101,10 +101,31 @@ components:
       required:
         - cases
       properties:
-        cases:
+        self:
+          type: string
+          format: uri
+          example: "https://customer-area.trelobifteki.com/api/customer-cases"
+        items:
           type: array
           items:
             $ref: "#/components/schemas/CustomerCase"
+        first:
+          type: string
+          format: uri
+          example: "https://customer-area.trelobifteki.com/api/customer-cases/pages/1"
+        next:
+          type: string
+          format: uri
+          example: "https://customer-area.trelobifteki.com/api/customer-cases/pages/2"
+        previous:
+          type: string
+          format: uri
+          example: "https://customer-area.trelobifteki.com/api/customer-cases/pages/1"
+        last:
+          type: string
+          format: uri
+          example: "https://customer-area.trelobifteki.com/api/customer-cases/pages/10"
+
     Applicant:
       description:
         Applicant person
