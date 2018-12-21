@@ -72,28 +72,28 @@
 
 \begin{frame}{OpenAPI}
   \begin{itemize}
-    \item \emph{MUST} provide API specification in YAML
+    \item \emph{Must} provide API specification in YAML
     \item \emph{SHOULD} provide API user manual online
-    \item \emph{MUST} provide metainformation (title, description, team, audience)
-    \item \emph{MUST} use semantic version
+    \item \emph{Must} provide metainformation (title, description, team, audience)
+    \item \emph{Must} use semantic version
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Security}
   \begin{itemize}
-    \item \emph{MUST} secure endpoints with OAuth 2.0
-    \item \emph{MUST} design and assign permissions
+    \item \emph{Must} secure endpoints with OAuth 2.0
+    \item \emph{Must} design and assign permissions
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Versioning}
   \begin{itemize}
-    \item \emph{MUST} never break backwards compatibility
+    \item \emph{Must} never break backwards compatibility
     \item \emph{SHOULD} avoid versioning (MUST avoid URL versioning)
     \item \emph{SHOULD} prefer compatible extensions
     \item Clients SHOULD not crash on compatible API extensions
-    \item \emph{MUST} use media type versioning
-    \item \emph{MUST} obtain approval of clients (e.g.~deprecation)
+    \item \emph{Must} use media type versioning
+    \item \emph{Must} obtain approval of clients (e.g.~deprecation)
   \end{itemize}
 
   \begin{block}{Example}
@@ -105,8 +105,9 @@
 
 \begin{frame}{API design}
   \begin{itemize}
-    \item \emph{MUST} always return JSON objects as top-level
-    \item \emph{MUST} property names be ASCII \emph{snake\_case} (and never \empty{camelCase})
+    \item \emph{Must} Use functional name schema
+    \item \emph{Must} always return JSON objects as top-level
+    \item \emph{Must} property names be ASCII \emph{snake\_case} (and never \empty{camelCase})
     \item \emph{SHOULD} use additionalProperties
     \item \emph{SHOULD} use enumeration values as String
     \item \emph{SHOULD} use standards for Date, duration, currency, country, language
@@ -177,56 +178,12 @@
 \end{frame}
 
 \begin{frame}{Proprietary Headers}
-
   \begin{itemize}
-
-    \item
-          X-Flow-ID (troubleshooting)
-    \item
-          X-Frontend-Type (mobile-app / browser)
-    \item
-          X-Device-Type (tablet, desktop)
-    \item
-          X-Device-OS (IOS, Android)
+    \item X-Flow-ID (troubleshooting)
+    \item X-Frontend-Type (mobile-app / browser)
+    \item X-Device-Type (tablet, desktop)
+    \item X-Device-OS (IOS, Android)
   \end{itemize}
-
-\end{frame}
-
-\begin{frame}{API operations}
-
-  \begin{itemize}
-
-    \item
-          MUST Publish API Specifications (zalando-apis directory)
-  \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Internal processes}
-
-  \begin{itemize}
-
-    \item
-          Use functional naming schema
-    \item
-          internal registry for components
-  \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Notes}
-
-  \begin{block}{Principle}
-
-    \begin{itemize}
-
-      \item
-            Actively improve and maintain API consistency over long term
-      \item
-            Simple, comprehensive and usable API
-    \end{itemize}
-
-  \end{block}
 \end{frame}
 
 \begin{frame}{Useful tools}
@@ -238,6 +195,5 @@
     \item intellij-swagger
   \end{itemize}
 \end{frame}
-
 
 \end{document}
