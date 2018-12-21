@@ -11,7 +11,7 @@ info:
   license:
     name: MIT
 servers:
-  - url: https://customer-area.trelobifteki.com/api/
+  - url: https://customer-area.trelobifteki.com/
 paths:
   /customer-cases:
     get:
@@ -24,9 +24,6 @@ paths:
             application/json:
               schema:
                  $ref: "#/components/schemas/CustomerCases"
-      security:
-        - oauth2:
-          - customer-area.customer-cases.read
   /customer-cases/{customerCaseId}:
     get:
       summary: get customer case by id
@@ -52,18 +49,7 @@ paths:
             application/problem+json:
               schema:
                 $ref: "#/components/schemas/Problem"
-      security:
-        - oauth2:
-          - customer-area.customer-cases.read
 components:
-  securitySchemes:
-    oauth2:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: https://identity.trelobifteki.com/oauth2/token
-          scopes:
-            customer-area.customer-cases.read: Access right needed to read from the customer case service.
   schemas:
     CustomerCase:
       description:
