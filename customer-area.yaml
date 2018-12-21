@@ -126,6 +126,7 @@ components:
           type: string
           description: 2 letter nationality as defined in ISO-3166-1
           format: iso-3166-1
+          example: DE
     Money:
       type: object
       properties:
