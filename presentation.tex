@@ -73,7 +73,7 @@
 \begin{frame}{OpenAPI}
   \begin{itemize}
     \item \emph{Must} provide API specification in YAML
-    \item \emph{SHOULD} provide API user manual online
+    \item \emph{Should} provide API user manual online
     \item \emph{Must} provide metainformation (title, description, team, audience)
     \item \emph{Must} use semantic version
   \end{itemize}
@@ -89,9 +89,9 @@
 \begin{frame}{Versioning}
   \begin{itemize}
     \item \emph{Must} never break backwards compatibility
-    \item \emph{SHOULD} avoid versioning (MUST avoid URL versioning)
-    \item \emph{SHOULD} prefer compatible extensions
-    \item Clients SHOULD not crash on compatible API extensions
+    \item \emph{Should} avoid versioning (MUST avoid URL versioning)
+    \item \emph{Should} prefer compatible extensions
+    \item Clients \emph{should} not crash on compatible API extensions
     \item \emph{Must} use media type versioning
     \item \emph{Must} obtain approval of clients (e.g.~deprecation)
   \end{itemize}
@@ -108,9 +108,9 @@
     \item \emph{Must} Use functional name schema
     \item \emph{Must} always return JSON objects as top-level
     \item \emph{Must} property names be ASCII \emph{snake\_case} (and never \empty{camelCase})
-    \item \emph{SHOULD} use additionalProperties
-    \item \emph{SHOULD} use enumeration values as String
-    \item \emph{SHOULD} use standards for Date, duration, currency, country, language
+    \item \emph{Should} use additionalProperties
+    \item \emph{Should} use enumeration values as String
+    \item \emph{Should} use standards for Date, duration, currency, country, language
   \end{itemize}
 \end{frame}
 
@@ -156,11 +156,11 @@
 
 \begin{frame}{Performance tips}
   \begin{itemize}
-    \item SHOULD Use gzip compression
-    \item SHOULD reduce bandwidth needs and improve responsiveness
-    \item SHOULD support filtering fields
-    \item SHOULD support pagination
-    \item SHOULD allow optional embedding
+    \item \emph{Should} Use gzip compression
+    \item \emph{Should} reduce bandwidth needs and improve responsiveness
+    \item \emph{Should} support filtering fields
+    \item \emph{Should} support pagination
+    \item \emph{Should} allow optional embedding
     \item MUST Document caching, if supported (default: Cache-Control: no-cache)
   \end{itemize}
 \end{frame}
